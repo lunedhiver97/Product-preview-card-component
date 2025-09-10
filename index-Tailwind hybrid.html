@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Frontend Mentor | Product preview card component</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+  <link href="./styles.css" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Montserrat', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+            fraunces: ['Fraunces', 'serif'],
+          },
+          colors: {
+            cream: '#F2EAE2',
+            gunmetal: '#1C232B',
+            aurometal: '#6C7289',
+            deepAqua: '#3D8168',
+            deepAquaHover: '#1A4032',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+    .optical { font-optical-sizing: auto; }
+  </style>
+  <style type="text/tailwindcss">
+    @layer components {
+      .page-container { @apply min-h-screen w-full flex justify-center items-center bg-cream p-4; }
+
+      .preview-card { @apply w-[350px] h-[750px] md:w-[600px] md:h-[456px] rounded-lg bg-white flex flex-col md:flex-row overflow-hidden; }
+
+      .image-container { @apply w-full h-[342px] md:w-1/2 md:h-full bg-cover bg-center; }
+      /* Keep background images inline in HTML or set them with plain CSS if preferred */
+
+      .details-container { @apply w-full h-[408px] md:w-1/2 md:h-full p-8 flex flex-col gap-6 md:gap-8 font-sans; }
+      .description-container { @apply flex flex-col gap-6; }
+
+      .product-type { @apply text-aurometal text-[12px] font-medium leading-[120%] tracking-[5px]; }
+      .product-name { @apply text-gunmetal font-fraunces text-[32px] font-bold leading-[100%]; }
+      .product-description { @apply text-aurometal text-[14px] font-medium leading-[160%]; }
+
+      .price-container { @apply flex items-center gap-4; }
+      .current-price { @apply text-deepAqua font-fraunces text-[32px] font-bold leading-[100%]; }
+      .original-price { @apply text-aurometal text-[13px] font-medium leading-[120%] line-through; }
+
+      .add-to-cart-button { @apply mx-auto flex w-[286px] h-[50px] justify-center items-center gap-2 rounded-lg bg-deepAqua text-white cursor-pointer text-[14px] font-bold leading-[110%] hover:bg-deepAquaHover md:w-[236px] md:h-auto md:py-4 md:px-8; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page-container min-h-screen w-full flex justify-center items-center bg-cream p-4">
+    <div class="preview-card w-[350px] h-[750px] md:w-[600px] md:h-[456px] rounded-lg bg-white flex flex-col md:flex-row overflow-hidden">
+      <div class="image-container w-full h-[342px] md:w-1/2 md:h-full bg-[url('./images/image-product-mobile.jpg')] md:bg-[url('./images/image-product-desktop.jpg')] bg-cover bg-center"></div>
+      <div class="details-container w-full h-[408px] md:w-1/2 md:h-full p-8 md:p-8 flex flex-col gap-6 md:gap-8 font-sans">
+        <div class="description-container flex flex-col gap-6">
+          <div class="product-type text-aurometal text-[12px] font-medium leading-[120%] tracking-[5px]">PERFUME</div>
+          <div class="product-name text-gunmetal font-fraunces text-[32px] font-bold leading-[100%] optical">Gabrielle Essence Eau De Parfum</div>
+          <div class="product-description text-aurometal text-[14px] font-medium leading-[160%]">A floral, solar and voluptuous interpretation composed by Olivier Polge,
+            Perfumer-Creator for the House of CHANEL.</div>
+        </div>
+        <div class="price-container flex items-center gap-4">
+          <div class="current-price text-deepAqua font-fraunces text-[32px] font-bold leading-[100%] optical">$149.99</div>
+          <div class="original-price text-aurometal text-[13px] font-medium leading-[120%] line-through">$169.99</div>
+        </div>
+        <button class="add-to-cart-button mx-auto flex w-[286px] h-[50px] justify-center items-center gap-2 rounded-lg bg-deepAqua text-white cursor-pointer text-[14px] font-bold leading-[110%] hover:bg-deepAquaHover md:w-[236px] md:h-auto md:py-4 md:px-8">
+          <img src="./images/icon-cart.svg" alt="cart icon">
+          <span>Add to Cart</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Sylvia C</a>.
+  </div>
+</body>
+
+</html>
